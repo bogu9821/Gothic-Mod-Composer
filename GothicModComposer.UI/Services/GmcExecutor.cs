@@ -46,7 +46,8 @@ namespace GothicModComposer.UI.Services
                         $"--modPath={_gmcSettingsVM.GmcConfiguration.ModificationRootPath}",
                         $"--profile={profile}",
                         $"--configurationFile={_gmcSettingsVM.GmcSettingsJsonFilePath}",
-                        _gmcSettingsVM.GmcConfiguration.CloseAfterFinish ? "" : "--keepOpenAfterFinish"
+                        _gmcSettingsVM.GmcConfiguration.CloseAfterFinish ? "" : "--keepOpenAfterFinish",
+                        _gmcSettingsVM.GmcConfiguration.MaximizeConsoleOnStart ? "" : "--disableConsoleMaximization"
                     },
                     Verb = "runas", // Force to run the process as Administrator
                     UseShellExecute = false

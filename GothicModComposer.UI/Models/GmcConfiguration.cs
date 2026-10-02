@@ -19,6 +19,7 @@ namespace GothicModComposer.UI.Models
         private string _modificationRootPath;
         private bool _closeAfterFinish = true;
         private bool _startWithWindows;
+        private bool _maximizeConsoleOnStart = true;
         private bool _enableZenAutoRefresh = true;
 
         public GmcConfiguration()
@@ -60,6 +61,12 @@ namespace GothicModComposer.UI.Models
         {
             get => _startWithWindows;
             set => SetProperty(ref _startWithWindows, value);
+        }
+
+        public bool MaximizeConsoleOnStart
+        {
+            get => _maximizeConsoleOnStart;
+            set => SetProperty(ref _maximizeConsoleOnStart, value);
         }
 
         public bool EnableZenAutoRefresh

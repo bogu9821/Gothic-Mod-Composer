@@ -40,5 +40,12 @@ namespace GothicModComposer.Models
             HelpText = "Json configuration file for GMC.",
             Default = false)]
         public bool KeepOpenAfterFinish { get; set; }
+
+        [Option(
+            "disableConsoleMaximization",
+            Required = false,
+            HelpText = "Prevents GMC from maximizing its console window on startup.",
+            Default = false)]
+        public bool DisableConsoleMaximization { get; set; }
     }
 }

@@ -19,7 +19,6 @@ namespace GothicModComposer
         private static void Main(string[] args)
         {
             SetTitle();
-            MaximizeWindow();
 
             Parser.Default.ParseArguments<GmcInitialParameter>(args)
                   .WithParsed(RunGmc);
@@ -27,6 +26,11 @@ namespace GothicModComposer
 
         private static void RunGmc(GmcInitialParameter parameters)
         {
+            if (!parameters.DisableConsoleMaximization)
+            {
+                MaximizeWindow();
+            }
+
             var fullVersion = Assembly.GetExecutingAssembly().GetName().Version;
             var stopWatch = new Stopwatch();
 
@@ -99,5 +103,6 @@ namespace GothicModComposer
             var p = Process.GetCurrentProcess();
             ShowWindow(p.MainWindowHandle, 3); //SW_MAXIMIZE = 3
         }
+
     }
 }
